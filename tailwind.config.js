@@ -6,16 +6,16 @@ module.exports = {
   theme: {
     extend: {},
   },
-  
- 
+
+
 
 
   daisyui: {
     themes: [
       {
         itishcoll_theme: {
-          primary: "#f25e5e",
-          secondary: "#f6d860",
+          primary: "#282838",
+          secondary: "#1171B9",
           accent: "#37cdbe",
           neutral: "#3d4451",
           "base-100": "#ffffff",

@@ -3,31 +3,26 @@ import banner1 from '../../assests/banner/image1.jpg'
 import banner2 from '../../assests/banner/image2.jpg'
 import banner4 from '../../assests/banner/image3.jpg'
 // import banner5 from '../../assests/banner/image4.jpg'
+import logoItIshkool from '../../assests/logo/logoItIshkool.png'
 const Banner = () => {
   return (
-    <div>
-      <div class="carousel w-full">
-        <div id="item1" class="carousel-item w-full">
-          <img src={banner1} alt='' class="w-full rounded" />
+    <section className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mt-12 ml-12'>
+      {/* Text Section */}
+      <div className='p-8'>
+        <div className='text-8xl font-extrabold'>
+          <h1>Learn The Best</h1>
+          <h1>From The Best</h1>
         </div>
-        <div id="item2" class="carousel-item rounded w-full">
-          <img src={banner2} alt='' class="w-full" />
+        <div>
+          <p className='mr-28 text-xl'>It Ishkool is an e-learning platform with an aim of educating people in IT out of any cost. We are working with some talented mentors in order to give the best guidance to our students. With more than 10 (ten) free courses, IT Ishkool helps you to enrich your knowledge in the tech field.</p>
         </div>
-        <div id="item3" class="carousel-item w-full">
-          <img src={banner4} alt='' class="w-full rounded" />
-        </div>
-        <div id="item4" class="carousel-item w-full">
-          <img src="https://placeimg.com/800/200/arch" alt='' class="w-full" />
-        </div>
+        <button className='btn btn-secondary my-3 rounded-full text-white'>Enroll</button>
       </div>
-      <div class="flex justify-center w-full py-2 gap-2">
-        <a href="#item1" class="btn btn-xs">1</a>
-        <a href="#item2" class="btn btn-xs">2</a>
-
-        <a href="#item3" class="btn btn-xs">3</a>
-        <a href="#item4" class="btn btn-xs">4</a>
+      {/* Logo Section  */}
+      <div className='p-8 flex justify-center items-center'>
+        <img className=' h-80' src={logoItIshkool} alt="" />
       </div>
-    </div>
+    </section>
   );
 };
 
