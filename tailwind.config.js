@@ -16,7 +16,7 @@ module.exports = {
         itishcoll_theme: {
           primary: "#282838",
           secondary: "#1171B9",
-          accent: "#37cdbe",
+          accent: "#303048",
           neutral: "#3d4451",
           "base-100": "#ffffff",
         },

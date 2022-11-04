@@ -47,7 +47,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div class="navbar bg-[#303048] text-white shadow-2xl">
+      <div class="navbar bg-accent text-white shadow-2xl">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -68,7 +68,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div class="navbar-center hidden lg:flex ">
-          <ul class="menu menu-horizontal p-5 font-light text-2xl">
+          <ul class="menu menu-horizontal p-7 font-semibold text-2xl">
             {manuItems}
           </ul>
         </div>

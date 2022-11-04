@@ -1,16 +1,14 @@
 import React from 'react';
-import banner1 from '../../assests/banner/image1.jpg'
-import banner2 from '../../assests/banner/image2.jpg'
-import banner4 from '../../assests/banner/image3.jpg'
-// import banner5 from '../../assests/banner/image4.jpg'
 import logoItIshkool from '../../assests/logo/logoItIshkool.png'
+
+
 const Banner = () => {
   return (
     <section className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mt-12 ml-12'>
       {/* Text Section */}
       <div className='p-8'>
         <div className='text-8xl font-extrabold'>
-          <h1>Learn The Best</h1>
+          <h1 className='my-3'>Learn The Best</h1>
           <h1>From The Best</h1>
         </div>
         <div>
@@ -20,7 +18,7 @@ const Banner = () => {
       </div>
       {/* Logo Section  */}
       <div className='p-8 flex justify-center items-center'>
-        <img className=' h-80' src={logoItIshkool} alt="" />
+        <img className='h-80' src={logoItIshkool} alt="" />
       </div>
     </section>
   );

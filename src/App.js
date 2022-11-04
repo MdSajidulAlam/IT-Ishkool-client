@@ -13,7 +13,7 @@ import SignUp from './Pages/Login/SignUp';
 
 function App() {
   return (
-    <div className="font-[acumin-pro] bg-primary text-white">
+    <div className="font-[poppin] bg-primary text-white">
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
