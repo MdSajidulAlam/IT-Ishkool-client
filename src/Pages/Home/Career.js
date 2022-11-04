@@ -12,7 +12,7 @@ const Career = () => {
                 </div>
             </div>
             <div className='w-2/4 mx-auto'>
-                <Marquee speed={40}>
+                <Marquee speed={40} pauseOnHover={true} gradient={false}>
                     <img className='w-[150px] m-8' src={logoItIshkool} alt="" />
                     <img className='w-[150px] m-8' src={logoItIshkool} alt="" />
                     <img className='w-[150px] m-8' src={logoItIshkool} alt="" />
