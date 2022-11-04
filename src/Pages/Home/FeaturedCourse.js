@@ -2,7 +2,7 @@ import React from 'react';
 
 const FeaturedCourse = () => {
     return (
-        <div className='grid grid-cols-3 gap-4 w-4/5 mx-auto rounded-2xl bg-accent shadow-2xl'>
+        <div className='grid grid-cols-3 gap-4 w-4/5 mx-auto rounded-2xl bg-accent shadow-xl'>
             <div className='p-5 lg:col-span-1 md:col-span-3'>
                 <img className='rounded-2xl w-full' src="https://images.unsplash.com/photo-1601042879364-f3947d3f9c16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3liZXJwdW5rJTIwY2l0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
             </div>
