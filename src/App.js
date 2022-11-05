@@ -13,14 +13,14 @@ import SignUp from './Pages/Login/SignUp';
 
 function App() {
   return (
-    <div className="font-[poppin] bg-primary text-white">
+    <div className="font-[montserrat] bg-primary text-white">
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/home' element={<Home></Home>} ></Route>
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
-        <Route path='/signin' element={<SignUp></SignUp>} ></Route>
+        <Route path='/signup' element={<SignUp></SignUp>} ></Route>
         <Route path='/dashBoard' element={<DashBoard></DashBoard>} ></Route>
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>

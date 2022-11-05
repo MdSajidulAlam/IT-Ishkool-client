@@ -14,7 +14,7 @@ const Banner = () => {
         <div>
           <p className='mr-28 text-xl'>It Ishkool is an e-learning platform with an aim of educating people in IT out of any cost. We are working with some talented mentors in order to give the best guidance to our students. With more than 10 (ten) free courses, IT Ishkool helps you to enrich your knowledge in the tech field.</p>
         </div>
-        <button className='btn btn-secondary my-3 rounded-full text-white'>Enroll</button>
+        <button className='btn btn-secondary my-16 rounded-full text-white'>Enroll</button>
       </div>
       {/* Logo Section  */}
       <div className='p-8 flex justify-center items-center'>

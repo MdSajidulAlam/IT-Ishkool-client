@@ -17,9 +17,9 @@ const Navbar = () => {
   // if (user) {
   //   navigate("/home")
   // }
-  const activeStyle = {
-    textDecoration: "underline underline-offset-8",
-  }
+  // const activeStyle = {
+  //   textDecoration: "underline underline-offset-8",
+  // }
 
   const manuItems = <>
     <li><NavLink className={({ isActive }) =>
@@ -37,7 +37,9 @@ const Navbar = () => {
     <li><NavLink className={({ isActive }) =>
       isActive ? "underline underline-offset-8" : undefined
     } to="/contact">Contact</NavLink></li>
-    <li className='bg-secondary text-white rounded-full'><NavLink to="/login">Login</NavLink></li>
+    <li className='bg-secondary text-white rounded-full'><NavLink className={({ isActive }) =>
+      isActive ? "bg-secondary text-white rounded-full" : undefined
+    } to="/login">Login</NavLink></li>
     <li className='bg-primary text-white border-2 border-secondary rounded-full ml-3'><NavLink to="/signup">Register</NavLink></li>
     {/* <li className='text-orange-700 font-bold'><Link to="/dashBoard">Dashboard</Link></li>
     <li><Link>Certification</Link></li>

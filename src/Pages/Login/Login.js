@@ -4,6 +4,7 @@ import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
+import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
 
@@ -46,19 +47,19 @@ const Login = () => {
 
   return (
     <div className='flex h-screen justify-center items-center'>
-      <div className='card w-96 bg-base-100 shadow-xl'>
-        <div className='card-body'>
-          <h2 className='text-center text-2xl font-bold'>Login</h2>
+      <div className='card w-96 bg-accent shadow-xl'>
+        <div className='card-body text-white'>
+          <h2 className=' text-2xl font-bold'>Log in</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
 
             <div class="form-control w-full max-w-xs">
               <label class="label">
-                <span class="label-text">Email</span>
+                <span class="label-text text-white text-lg">Email</span>
               </label>
               <input
                 type="email"
                 placeholder="Your Email"
-                class="input input-bordered w-full max-w-xs"
+                class="input input-bordered w-full max-w-xs bg-accent border-2 border-secondary"
                 {...register("email", {
                   required: {
                     value: true,
@@ -78,12 +79,12 @@ const Login = () => {
             </div>
             <div class="form-control w-full max-w-xs">
               <label class="label">
-                <span class="label-text">Password</span>
+                <span class="label-text text-white text-lg">Password</span>
               </label>
               <input
                 type="password"
                 placeholder="Password"
-                class="input input-bordered w-full max-w-xs"
+                class="input input-bordered w-full max-w-xs bg-accent border-2 border-secondary"
                 {...register("password", {
                   required: {
                     value: true,
@@ -104,22 +105,24 @@ const Login = () => {
 
 
             {signInErrorMessage}
-            <input className='btn w-full text-white max-w-xs btn-active btn-accent font-bold' value='Login' type="submit" />
+            <input className='btn w-full text-white max-w-xs rounded-full btn-secondary font-bold' value='Login' type="submit" />
           </form>
-          <p><small>New to it ishcoll <Link className='text-blue-800 font-bold' to="/signin"> Create new account</Link></small></p>
 
+          <div className='grid grid-cols-5 w-5/6 mx-auto mt-5'>
+            <div className='col-span-2 h-[1px] bg-gray-100 rounded-full'></div>
+            <div className='col-span-1 flex justify-center items-center mt-[-13px]'>or</div>
+            <div className='col-span-2 h-[1px] bg-gray-100 rounded-full'></div>
+          </div>
 
-
-
-
-
-          <div className='divider'>or</div>
+          {/* <div className='divider'>or</div> */}
           <button
             onClick={() => signInWithGoogle()}
-            className='btn btn-outline'
-          >Continue With Google
+            className='btn btn-ghost text-slate-400'
+          >Log in with <FcGoogle className='ml-2' />
 
           </button>
+          <p className='text-slate-400 text-center'>Do you have an account? <Link className='text-slate-400 font-bold btn btn-link' to="/signup"> Sign Up</Link></p>
+
 
         </div>
 
