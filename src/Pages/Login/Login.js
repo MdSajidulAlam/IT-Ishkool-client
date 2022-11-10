@@ -46,7 +46,7 @@ const Login = () => {
 
 
   return (
-    <div className='flex h-screen justify-center items-center'>
+    <div className='flex h-screen justify-center items-start mt-8'>
       <div className='card w-96 bg-accent shadow-xl'>
         <div className='card-body text-white'>
           <h2 className=' text-2xl font-bold'>Log in</h2>
@@ -59,7 +59,7 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="Your Email"
-                class="input input-bordered w-full max-w-xs bg-accent border-2 border-secondary"
+                class="input input-bordered w-full h-[35px] max-w-xs bg-accent border-1 border-white"
                 {...register("email", {
                   required: {
                     value: true,
@@ -84,7 +84,7 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="Password"
-                class="input input-bordered w-full max-w-xs bg-accent border-2 border-secondary"
+                class="input input-bordered w-full h-[35px] max-w-xs bg-accent border-1 border-white"
                 {...register("password", {
                   required: {
                     value: true,
@@ -102,10 +102,16 @@ const Login = () => {
 
               </label>
             </div>
-
-
+            <div className="form-control">
+              <label className="cursor-pointer label">
+                <input type="checkbox" className="checkbox checkbox-primary bg-white" />
+                <div className='w-full ml-3'>
+                  <span className="label-text text-white">Remember me</span>
+                </div>
+              </label>
+            </div>
             {signInErrorMessage}
-            <input className='btn w-full text-white max-w-xs rounded-full btn-secondary font-bold' value='Login' type="submit" />
+            <input className='btn w-full h-[35px] text-white max-w-xs rounded-full btn-secondary font-bold' value='Login' type="submit" />
           </form>
 
           <div className='grid grid-cols-5 w-5/6 mx-auto mt-5'>

@@ -8,6 +8,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
+import Enroll from './Pages/Home/Enroll';
 
 
 
@@ -22,7 +23,7 @@ function App() {
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<SignUp></SignUp>} ></Route>
         <Route path='/dashBoard' element={<DashBoard></DashBoard>} ></Route>
-        <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
+        <Route path='/enroll' element={<Enroll></Enroll>} ></Route>
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
       </Routes>

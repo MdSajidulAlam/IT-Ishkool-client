@@ -37,6 +37,7 @@ const Navbar = () => {
     <li><NavLink className={({ isActive }) =>
       isActive ? "underline underline-offset-8" : undefined
     } to="/contact">Contact</NavLink></li>
+
     <li className='bg-secondary text-white rounded-full'><NavLink className={({ isActive }) =>
       isActive ? "bg-secondary text-white rounded-full" : undefined
     } to="/login">Login</NavLink></li>
