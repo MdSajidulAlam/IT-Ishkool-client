@@ -9,7 +9,7 @@ import Loading from '../Shared/Loading';
 const SignUp = () => {
   const navigate = useNavigate();
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  const { register, formState: { errors }, handleSubmit } = useForm();
+  const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const [
@@ -31,14 +31,26 @@ const SignUp = () => {
   }
 
   const onSubmit = async (data) => {
-    console.log(data);
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
-    console.log('update done');
-    navigate('/home');
+    const firstName = data.firstName
+    const lastName = data.lastName
+    const fullName = firstName + ' ' + lastName
+    if (data.password === data.confirmPassword) {
+      await createUserWithEmailAndPassword(data.email, data.password);
+      await updateProfile({ displayName: fullName });
+      reset()
+      navigate('/');
+    }
+    else {
+      signInErrorMessage = "Password didn't matched"
+    }
+
+    // console.log(firstName + ' ' + lastName);
+
+    // console.log('update done');
+
   }
 
-
+  // console.log(user);
   // if(token){
   //     // console.log(user||gUser);
   //     navigate('/home');
@@ -63,7 +75,7 @@ const SignUp = () => {
                   type="text"
                   placeholder=""
                   class="input input-bordered w-full h-[35px] max-w-xs bg-accent border-1 border-white"
-                  {...register("name", {
+                  {...register("firstName", {
                     required: {
                       value: true,
                       message: "name is required"
@@ -85,7 +97,7 @@ const SignUp = () => {
                   type="text"
                   placeholder=""
                   class="input input-bordered w-full h-[35px] max-w-xs bg-accent border-1 border-white"
-                  {...register("name", {
+                  {...register("lastName", {
                     required: {
                       value: true,
                       message: "name is required"
@@ -159,7 +171,7 @@ const SignUp = () => {
                 type="password"
                 placeholder=""
                 class="input input-bordered w-full h-[35px] max-w-xs bg-accent border-1 border-white"
-                {...register("password", {
+                {...register("confirmPassword", {
                   required: {
                     value: true,
                     message: "Password is required"

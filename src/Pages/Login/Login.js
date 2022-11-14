@@ -22,7 +22,7 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
   //   const [token] =useToken(user || gUser)
-
+  console.log(gUser);
   let signInErrorMessage;
   if (loading || gLoading) {
     return <Loading></Loading>
@@ -33,8 +33,8 @@ const Login = () => {
   }
 
   const onSubmit = data => {
-    console.log(data);
     signInWithEmailAndPassword(data.email, data.password)
+    navigate('/')
   }
 
 

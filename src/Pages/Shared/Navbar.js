@@ -4,15 +4,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logoItIshkool from '../../assests/logo/logoItIshkool.png'
+import user from '../../assests/logo/user.png'
 
 
 const Navbar = () => {
   // const navigate = useNavigate()
-  // const [user, loading, error] = useAuthState(auth);
-  // const logout = () => {
-  //   signOut(auth);
-  //   localStorage.removeItem('accessToken');
-  // }
+  const [user, loading, error] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+    // localStorage.removeItem('accessToken');
+  }
 
   // if (user) {
   //   navigate("/home")
@@ -20,6 +21,7 @@ const Navbar = () => {
   // const activeStyle = {
   //   textDecoration: "underline underline-offset-8",
   // }
+  console.log(user)
 
   const manuItems = <>
     <li><NavLink className={({ isActive }) =>
@@ -38,10 +40,11 @@ const Navbar = () => {
       isActive ? "underline underline-offset-8" : undefined
     } to="/contact">Contact</NavLink></li>
 
-    <li className='bg-secondary text-white rounded-full'><NavLink className={({ isActive }) =>
+
+    {/* <li className='bg-secondary text-white rounded-full'><NavLink className={({ isActive }) =>
       isActive ? "bg-secondary text-white rounded-full" : undefined
     } to="/login">Login</NavLink></li>
-    <li className='bg-primary text-white border-2 border-secondary rounded-full ml-3'><NavLink to="/signup">Register</NavLink></li>
+    <li className='bg-primary text-white border-2 border-secondary rounded-full ml-3'><NavLink to="/signup">Register</NavLink></li> */}
     {/* <li className='text-orange-700 font-bold'><Link to="/dashBoard">Dashboard</Link></li>
     <li><Link>Certification</Link></li>
     <li><Link>Manage Courses</Link></li>
@@ -58,6 +61,10 @@ const Navbar = () => {
             </label>
             <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow  w-52 bg-slate-50 text-black">
               {manuItems}
+              <li className='bg-secondary text-white rounded-full'><NavLink className={({ isActive }) =>
+                isActive ? "bg-secondary text-white rounded-full" : undefined
+              } to="/login">Login</NavLink></li>
+              <li className='bg-primary text-white border-2 border-secondary rounded-full ml-3'><NavLink to="/signup">Register</NavLink></li>
             </ul>
           </div >
           <Link to='/' class="btn btn-ghost normal-case text-xl">
@@ -73,13 +80,20 @@ const Navbar = () => {
         <div class="navbar-center hidden lg:flex ">
           <ul class="menu menu-horizontal p-7 font-semibold text-2xl">
             {manuItems}
+
           </ul>
+          <div className='flex justify-end items-center'>
+            <li className='bg-secondary text-white rounded-full list-none py-1 px-2'><NavLink className={({ isActive }) =>
+              isActive ? "bg-secondary text-white rounded-full" : undefined
+            } to="/login">Login</NavLink></li>
+            <li className='bg-primary text-white border-2 border-secondary rounded-full ml-3 list-none py-1 px-2'><NavLink to="/signup">Register</NavLink></li>
+          </div>
         </div>
         <div class="navbar-end">
           <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
               <div class="w-10 rounded-full">
-                <img src="https://placeimg.com/80/80/people" />
+                <img src={user?.photoURL == null ? 'https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=' : user.photoURL} alt='' />
               </div>
             </label>
             <ul tabindex="0" class="menu menu-compact dropdown-content mt-8 p-2 shadow bg-base-100 text-black rounded-box w-52">
@@ -89,7 +103,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li><a>Settings</a></li>
-              <li><a>Logout</a></li>
+              <li><button onClick={logout} className='btn btn-secondary text-white'>Logout</button></li>
             </ul>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Marquee from 'react-fast-marquee';
 import logoItIshkool from '../../assests/logo/logoItIshkool.png'
 
-const Career = () => {
+const Advertisment = () => {
     return (
         <div>
             <div className='flex justify-center items-center mt-56 mb-8'>
@@ -25,4 +25,4 @@ const Career = () => {
     );
 };
 
-export default Career;
+export default Advertisment;

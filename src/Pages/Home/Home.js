@@ -1,10 +1,10 @@
 import React from 'react';
 import Banner from './Banner';
-import Career from './Career';
 import FAQ from './FAQ';
 import FeaturedCourse from './FeaturedCourse';
 import Guide from './Guide';
 import Time from './Time';
+import Advertisment from './Advertisment';
 
 const Home = () => {
     return (
@@ -14,7 +14,7 @@ const Home = () => {
             <Guide />
             <FeaturedCourse />
             <FAQ />
-            <Career />
+            <Advertisment />
             {/* <Time></Time> */}
         </div>
     );
