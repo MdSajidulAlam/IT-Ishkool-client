@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoItIshkool from '../../assests/logo/logoItIshkool.png'
 
 const Footer = () => {
@@ -13,11 +14,11 @@ const Footer = () => {
         </div>
         <div>
           <span class="text-3xl font-bold">OVERVIEW</span>
-          <a class="link link-hover  text-slate-400 text-xl">About</a>
-          <a class="link link-hover  text-slate-400 text-xl">Career</a>
-          <a class="link link-hover  text-slate-400 text-xl">Enroll</a>
-          <a class="link link-hover  text-slate-400 text-xl">Team</a>
-          <a class="link link-hover  text-slate-400 text-xl">Contact</a>
+          <Link to='about' class="link link-hover  text-slate-400 text-xl">About</Link>
+          <Link to='/career' class="link link-hover  text-slate-400 text-xl">Career</Link>
+          <Link to='/enroll' class="link link-hover  text-slate-400 text-xl">Enroll</Link>
+          <Link to='/team' class="link link-hover  text-slate-400 text-xl">Team</Link>
+          <Link to='/contact' class="link link-hover  text-slate-400 text-xl">Contact</Link>
           <a class="link link-hover  text-slate-400 text-xl">Privacy Policy</a>
         </div>
         <div>

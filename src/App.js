@@ -13,6 +13,7 @@ import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Career from './Pages/Career/Career';
 import EnrollDetails from './Pages/Enroll/EnrollDetails';
+import Team from './Pages/Team/Team';
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>} ></Route>
         <Route path='/dashBoard' element={<DashBoard></DashBoard>} ></Route>
         <Route path='/enroll' element={<Enroll></Enroll>} ></Route>
+        <Route path='/team' element={<Team></Team>} ></Route>
         <Route path='/contact' element={<Contact></Contact>} ></Route>
         <Route path='/about' element={<About></About>} ></Route>
         <Route path='/career' element={<Career></Career>} ></Route>
