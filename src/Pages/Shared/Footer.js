@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logoItIshkool from '../../assests/logo/logoItIshkool.png'
 
 const Footer = () => {
+  const { pathname } = useLocation();
+
+  if (pathname === "/dashboard") return null;
+
   return (
     <div>
       <footer class="footer p-10 bg-accent text-white">

@@ -5,6 +5,7 @@ import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logoItIshkool from '../../assests/logo/logoItIshkool.png'
 import user from '../../assests/logo/user.png'
+import { FiLogOut } from 'react-icons/fi'
 
 
 const Navbar = () => {
@@ -61,10 +62,8 @@ const Navbar = () => {
             </label>
             <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow  w-52 bg-slate-50 text-black">
               {manuItems}
-              <li className='bg-secondary text-white rounded-full'><NavLink className={({ isActive }) =>
-                isActive ? "bg-secondary text-white rounded-full" : undefined
-              } to="/login">Login</NavLink></li>
-              <li className='bg-primary text-white border-2 border-secondary rounded-full ml-3'><NavLink to="/signup">Register</NavLink></li>
+              <li className='bg-secondary text-white rounded-full mb-3'><Link to="/login">Login</Link></li>
+              <li className='bg-primary text-white border-2 border-secondary rounded-full '><Link to="/signup">Register</Link></li>
             </ul>
           </div >
           <Link to='/' class="btn btn-ghost normal-case text-xl">
@@ -82,12 +81,21 @@ const Navbar = () => {
             {manuItems}
 
           </ul>
-          <div className='flex justify-end items-center'>
-            <li className='bg-secondary text-white rounded-full list-none py-1 px-2'><NavLink className={({ isActive }) =>
-              isActive ? "bg-secondary text-white rounded-full" : undefined
-            } to="/login">Login</NavLink></li>
-            <li className='bg-primary text-white border-2 border-secondary rounded-full ml-3 list-none py-1 px-2'><NavLink to="/signup">Register</NavLink></li>
-          </div>
+
+          {
+            user ? <div >
+
+              <button onClick={logout} className='flex justify-center items-center text-lg'><FiLogOut className='mx-3' /> Log Out</button>
+            </div>
+              :
+              <div className='flex justify-end items-center'>
+                <li className='bg-secondary text-white rounded-full list-none py-1 px-2'><NavLink className={({ isActive }) =>
+                  isActive ? "bg-secondary text-white rounded-full" : undefined
+                } to="/login">Login</NavLink></li>
+                <li className='bg-primary text-white border-2 border-secondary rounded-full ml-3 list-none py-1 px-2'><NavLink to="/signup">Register</NavLink></li>
+              </div>
+          }
+
         </div>
         <div class="navbar-end">
           <div class="dropdown dropdown-end">
@@ -98,12 +106,13 @@ const Navbar = () => {
             </label>
             <ul tabindex="0" class="menu menu-compact dropdown-content mt-8 p-2 shadow bg-base-100 text-black rounded-box w-52">
               <li>
-                <a class="justify-between">
+                <button class="justify-between">
                   Profile
-                </a>
+                </button>
               </li>
-              <li><a>Settings</a></li>
-              <li><button onClick={logout} className='btn btn-secondary text-white'>Logout</button></li>
+              {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
+              <li><button>Settings</button></li>
+              <li><button onClick={logout} className='btn btn-secondary text-black'>Logout</button></li>
             </ul>
           </div>
         </div>

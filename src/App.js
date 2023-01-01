@@ -14,6 +14,7 @@ import About from './Pages/About/About';
 import Career from './Pages/Career/Career';
 import EnrollDetails from './Pages/Enroll/EnrollDetails';
 import Team from './Pages/Team/Team';
+import DashboardHome from './Pages/DashBoard/DashboardHome';
 
 
 
@@ -27,13 +28,15 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<SignUp></SignUp>} ></Route>
-        <Route path='/dashBoard' element={<DashBoard></DashBoard>} ></Route>
         <Route path='/enroll' element={<Enroll></Enroll>} ></Route>
         <Route path='/team' element={<Team></Team>} ></Route>
         <Route path='/contact' element={<Contact></Contact>} ></Route>
         <Route path='/about' element={<About></About>} ></Route>
         <Route path='/career' element={<Career></Career>} ></Route>
         <Route path='/enrolldetails' element={<EnrollDetails></EnrollDetails>} ></Route>
+        <Route path='/dashboard' element={<DashBoard></DashBoard>} >
+          <Route index element={<DashboardHome />}></Route>
+        </Route>
       </Routes>
       <Footer></Footer>
     </div>

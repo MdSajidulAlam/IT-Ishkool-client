@@ -3,7 +3,7 @@ import { BsFacebook, BsInstagram, BsLinkedin } from 'react-icons/bs';
 
 const Team = () => {
     return (
-        <section className='w-4/5 mx-auto my-12 grid grid-cols-3 gap-24'>
+        <section className='w-4/5 mx-auto my-12 grid lg:grid-cols-3 md:grid-cols-2 gap-24'>
             <div className='py-8 bg-accent rounded-xl'>
                 <div className="avatar w-full flex justify-center items-center mb-5">
                     <div className=" rounded-full">

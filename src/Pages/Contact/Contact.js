@@ -19,7 +19,7 @@ const Contact = () => {
             <h1 className='text-3xl  font-semibold text-center'>Get in touch</h1>
             <p className='text-slate-400 text-center'>Contact us for any queries, help or support</p>
             {/* ----------------- Icons Part------------- */}
-            <div className='grid grid-cols-3 w-4/6 mx-auto'>
+            <div className='grid lg:grid-cols-3 w-4/6 mx-auto'>
                 <div>
                     <div className='flex justify-center items-center'>
                         <BsFillTelephoneFill className='m-4 text-2xl' />
@@ -164,7 +164,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className='w-full flex justify-center items-center'>
-                    <input className='btn w-full h-[35px] text-white max-w-xs rounded-full btn-secondary font-bold' value='Sign Up' type="submit" />
+                    <input className='btn w-full h-[35px] text-white max-w-xs rounded-full btn-secondary font-bold' value='Send Message' type="submit" />
                 </div>
             </div>
         </div>
